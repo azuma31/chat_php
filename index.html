@@ -1,1 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Chat</title>
+    <style>
+        #chatbox {
+            height: 300px;
+            overflow-y: scroll;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="chatbox"></div>
+    <input type="text" id="messageInput" placeholder="Type your message...">
+    <button onclick="sendMessage()">Send</button>
+
+    <script>
+        function sendMessage() {
+            var message = document.getElementById("messageInput").value;
+            if (message.trim() !== "") {
+                document.getElementById("chatbox").innerHTML += "<p>You: " + message + "</p>";
+                document.getElementById("messageInput").value = "";
+
+                // Send the message to the server (not implemented in this example)
+                // You would typically use AJAX to send the message to the server
+                // and the server would handle storing and retrieving messages.
+            }
+        }
+    </script>
+</body>
+</html>
 
